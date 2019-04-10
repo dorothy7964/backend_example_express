@@ -7,10 +7,7 @@ var bodyParser = require('body-parser');
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-app.get('/', function(req, res){
-  res.send('START');
-});
-
+app.use('/', express.static('public'));
 app.use('/user', user);
 
 app.listen(3000, function() {
